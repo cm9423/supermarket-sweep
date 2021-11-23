@@ -14,7 +14,10 @@ currency_pairs = ["GBPUSDme", "EURUSDme", "EURGBPme", "USDJPYme",
                   "NZDUSDme", "AUDUSDme", "USDCADme"]
                   
 while no_of_pairs < 1 or no_of_pairs > 11:
-    no_of_pairs = int(input('How many pairs would you like to sweep? (1-11) '))
+    try:
+        no_of_pairs = int(input('How many pairs would you like to sweep? (1-11) '))
+    except ValueError:
+        print("please insert an integer between 1 and 11")
 
 currency_pairs = currency_pairs[:no_of_pairs]
 
@@ -77,7 +80,7 @@ plt.imshow(m, cmap='nipy_spectral', vmin=1, vmax=10)
 ax.set_xticks(np.arange(len(timeframes)))
 ax.set_yticks(np.arange(len(pairs)))
 ax.set_xticklabels(timeframes)
-plt.setp(ax.get_yticklabels(), rotation=30, ha="left", position=(-0.13, 0),
+plt.setp(ax.get_yticklabels(), rotation=30, ha="left", position=(-0.18, 0),
             rotation_mode="anchor")
 plt.setp(ax.get_xticklabels(), rotation=30, ha="right",
             rotation_mode="anchor")
@@ -95,19 +98,6 @@ ax.set_title("Supermarket Sweep\n")
 for idx, pair in enumerate(pairs):
     print(f"{pair} M15 Volatility: {str(total_in_pips[idx])} pips, {str(float(pcent[idx]))}%")
 
-
-# print("GBPUSD M15 Volatility:", str(total_in_pips[0]), "pips,", str(float(pcent[0])) + "%")
-# print("EURUSD M15 Volatility:", str(total_in_pips[1]), "pips,", str(float(pcent[1])) + "%")
-# print("EURGBP M15 Volatility:", str(total_in_pips[2]), "pips,", str(float(pcent[2])) + "%")
-# print("USDJPY M15 Volatility:", str(total_in_pips[3]), "pips,", str(float(pcent[3])) + "%")
-# print("GBPJPY M15 Volatility:", str(total_in_pips[4]), "pips,", str(float(pcent[4])) + "%")
-# print("USDCHF M15 Volatility:", str(total_in_pips[5]), "pips,", str(float(pcent[5])) + "%")
-# print("AUDCAD M15 Volatility:", str(total_in_pips[6]), "pips,", str(float(pcent[6])) + "%")
-# print("EURJPY M15 Volatility:", str(total_in_pips[7]), "pips,", str(float(pcent[7])) + "%")
-# print("NZDUSD M15 Volatility:", str(total_in_pips[8]), "pips,", str(float(pcent[8])) + "%")
-# print("AUDUSD M15 Volatility:", str(total_in_pips[9]), "pips,", str(float(pcent[9])) + "%")
-# print("USDCAD M15 Volatility:", str(total_in_pips[10]), "pips,", str(float(pcent[10])) + "%")
-print("test")
 plt.show()
 
 mt5.shutdown()
