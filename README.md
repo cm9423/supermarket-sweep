@@ -5,6 +5,8 @@ Calculates EMA over varying time periods, if shorter EMA is above longer, a gree
 
 Also returns M15 volatility for all pairs.
 
-THIS PROJECT REQUIRES METATRADER5 SOFTWARE INSTALL ON PC.
+THIS PROJECT REQUIRES METATRADER5 SOFTWARE INSTALLED ON PC.
+
+Example Output:
 
 ![alt text](https://github.com/cm9423/supermarket-sweep/blob/main/docs/images/supermarket-sweep.png)
