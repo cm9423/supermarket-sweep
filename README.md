@@ -7,4 +7,4 @@ Also returns M15 volatility for all pairs.
 
 THIS PROJECT REQUIRES METATRADER5 SOFTWARE INSTALL ON PC.
 
-![alt text](https://github.com/cm9423/supermarket-sweep/blob/main/supermarket-sweep.png?raw=true)
+![alt text](https://github.com/cm9423/supermarket-sweep/blob/main/docs/images/supermarket-sweep.png)
